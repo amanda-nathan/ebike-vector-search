@@ -19,8 +19,6 @@ DATA_DIR = Path(__file__).resolve().parent / "data"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
-USE_SNOWFLAKE = os.environ.get("SNOWFLAKE_ACCOUNT_P") and Path.home().joinpath(".snowflake/rsa_key.p8").exists()
-
 EXAMPLE_QUERIES = [
     "Can I ride my ebike on the sidewalk in Boston?",
     "Do I need a helmet?",
@@ -30,6 +28,42 @@ EXAMPLE_QUERIES = [
     "What are the speed limits for ebikes?",
     "How dangerous are ebikes for children?",
 ]
+
+
+def has_snowflake_secrets():
+    try:
+        return "snowflake" in st.secrets
+    except Exception:
+        return False
+
+
+def get_snowflake_connection():
+    import snowflake.connector
+    from cryptography.hazmat.primitives import serialization
+    from cryptography.hazmat.backends import default_backend
+
+    sf = st.secrets["snowflake"]
+
+    p_key = serialization.load_pem_private_key(
+        sf["private_key"].encode(), password=None, backend=default_backend()
+    )
+    pkb = p_key.private_bytes(
+        encoding=serialization.Encoding.DER,
+        format=serialization.PrivateFormat.PKCS8,
+        encryption_algorithm=serialization.NoEncryption(),
+    )
+
+    return snowflake.connector.connect(
+        account=sf["account"],
+        user=sf["user"],
+        private_key=pkb,
+        database="EBIKE_RAG",
+        schema="PUBLIC",
+        warehouse="COMPUTE_WH",
+    )
+
+
+USE_SNOWFLAKE = has_snowflake_secrets()
 
 
 @st.cache_resource
@@ -62,12 +96,10 @@ def retrieve_local(query, model, top_k=5):
 
 
 def retrieve_snowflake(query, model, top_k=5):
-    from connect import get_connection
-
     embedding = model.encode([query])[0]
     vec_str = "[" + ",".join(f"{v:.6f}" for v in embedding) + "]"
 
-    conn = get_connection()
+    conn = get_snowflake_connection()
     cur = conn.cursor()
     cur.execute(f"""
         SELECT title, category, content, source,
