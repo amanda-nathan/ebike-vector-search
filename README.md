@@ -171,6 +171,128 @@ ebike-vector-search/
 | Package manager | uv | Fast, deterministic lockfile |
 | Language | Python 3.13 | |
 
+## How I built this
+
+Step-by-step log of what I actually ran to create this project from scratch.
+
+**1. Created Snowflake trial account**
+
+Signed up at [signup.snowflake.com](https://signup.snowflake.com/). Got account ID `EVXCFCC-PX70116`. Trial gives 30 days and $400 compute credit.
+
+**2. Generated RSA key pair for programmatic access**
+
+Snowflake trial enforces MFA on password login, which blocks the Python connector. Key pair auth is the workaround.
+
+```bash
+mkdir -p ~/.snowflake
+openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -nocrypt -out ~/.snowflake/rsa_key.p8
+openssl rsa -in ~/.snowflake/rsa_key.p8 -pubout -out ~/.snowflake/rsa_key.pub
+```
+
+Then registered the public key in the Snowflake web UI (Worksheets tab):
+
+```sql
+ALTER USER ahattaway SET RSA_PUBLIC_KEY='MIIBIjANBgkqh...';
+```
+
+**3. Set environment variables**
+
+Added to `~/.zshrc`:
+
+```bash
+export SNOWFLAKE_ACCOUNT_P=EVXCFCC-PX70116
+export SNOWFLAKE_USER_P=ahattaway
+```
+
+**4. Initialized the project**
+
+```bash
+mkdir ebike-vector-search && cd ebike-vector-search
+uv init
+uv add snowflake-connector-python sentence-transformers requests cryptography streamlit numpy
+```
+
+**5. Tested the Snowflake connection**
+
+```python
+conn = snowflake.connector.connect(account=..., user=..., private_key=pkb)
+cur = conn.cursor()
+cur.execute('SELECT CURRENT_VERSION()')
+# → ('10.17.102',)
+```
+
+**6. Discovered Cortex is blocked on trial accounts**
+
+```sql
+SELECT SNOWFLAKE.CORTEX.EMBED_TEXT_768('e2e-base', 'test');
+-- ERROR: AI function EMBED_TEXT_768 is not available for trial accounts.
+```
+
+This meant I couldn't use Snowflake's built-in embedding or LLM functions. Solution: embed locally with sentence-transformers, generate locally with Ollama. The `VECTOR` type and `VECTOR_COSINE_SIMILARITY()` still work on trial.
+
+**7. Verified vector operations work**
+
+```sql
+CREATE TABLE test_vec (id INT, embedding VECTOR(FLOAT, 3));
+INSERT INTO test_vec SELECT 1, [1.0, 2.0, 3.0]::VECTOR(FLOAT, 3);
+SELECT VECTOR_COSINE_SIMILARITY(embedding, [1.0, 0.0, 0.0]::VECTOR(FLOAT, 3)) FROM test_vec;
+-- → 0.267
+```
+
+**8. Created the document corpus**
+
+Researched Boston e-bike regulations, safety stats, infrastructure plans from official sources (Mass.gov, Boston.gov, CPSC, MassDOT). Wrote 21 documents into `data/documents/corpus.json` with title, category, content, and source fields.
+
+**9. Built the ingestion pipeline**
+
+```bash
+cd src && uv run python ingest.py
+# Ingested 21 documents into EBIKE_RAG.PUBLIC.documents
+```
+
+This runs each document through `all-MiniLM-L6-v2` (produces a 384-float vector per doc), then inserts into Snowflake using the `[...]::VECTOR(FLOAT, 384)` cast syntax.
+
+**10. Tested semantic search**
+
+```bash
+uv run python search.py "Can I ride my ebike on the sidewalk?"
+# [0.686] Where E-Bikes Can Ride in Boston (regulation)
+# [0.564] Motorized Bicycle vs E-Bike Distinction (regulation)
+# [0.515] Boston City Council E-Bike Ordinances 2026 (legislation)
+```
+
+Top result is correct — the document about where e-bikes can/can't ride, which includes the sidewalk ban.
+
+**11. Added RAG with Ollama**
+
+Already had Ollama installed with `mistral:latest` (same model family Snowflake Cortex uses).
+
+```bash
+uv run python rag.py "Is it legal to ride an ebike on the sidewalk in Boston?"
+# Retrieved 4 relevant documents:
+#   [0.748] Where E-Bikes Can Ride in Boston
+#   [0.616] Boston City Council E-Bike Ordinances 2026
+# --- Answer ---
+# No, it is not legal to ride an e-bike on the sidewalk in Boston.
+# The Boston.gov source states that e-bikes are prohibited on sidewalks.
+```
+
+**12. Built the Streamlit UI**
+
+```bash
+uv run streamlit run streamlit_app.py
+# Local URL: http://localhost:8501
+```
+
+Added auto-detection: if Snowflake credentials exist, queries go to Snowflake. Otherwise falls back to numpy cosine similarity over pre-computed embeddings (`data/embeddings.npy`).
+
+**13. Deployed to Streamlit Community Cloud**
+
+- Connected GitHub repo at [share.streamlit.io](https://share.streamlit.io)
+- Main file: `streamlit_app.py`
+- Added Snowflake private key in Settings → Secrets (TOML format)
+- Live at [ebike-vector-search.streamlit.app](https://ebike-vector-search.streamlit.app)
+
 ## How it works
 
 ### 1. Embedding
