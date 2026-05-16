@@ -2,7 +2,9 @@
 
 Semantic search and retrieval-augmented generation (RAG) over Boston e-bike regulations, safety data, and infrastructure plans.
 
-**[Live demo](https://ebike-vector-search.streamlit.app)** (Snowflake trial expires June 15, 2026)
+**[Live demo](https://ebike-vector-search.streamlit.app)** — always works, no signup needed
+
+> The Snowflake trial backend expires June 15, 2026. After that, the app automatically falls back to local embeddings (same search results, computed on Streamlit's servers instead of Snowflake). The live demo never goes down.
 
 ## Architecture
 
