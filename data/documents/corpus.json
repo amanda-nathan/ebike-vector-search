@@ -1,0 +1,149 @@
+[
+  {
+    "id": "ma-classification-1",
+    "title": "Massachusetts E-Bike Classification Law",
+    "category": "regulation",
+    "content": "Massachusetts enacted e-bike classifications on November 8, 2022. Class 1: bicycle with fully operable pedals and electric motor of 750 watts or less, motor provides assistance only when rider is pedaling and ceases at 20 mph (pedal-assist). Class 2: bicycle with fully operable pedals and electric motor of 750 watts or less, motor may be used exclusively to propel the bicycle (throttle-actuated) and ceases at 20 mph. Class 3 e-bikes are NOT currently recognized under Massachusetts state law. Electric bicycles are NOT classified as motor vehicles. No license or registration required for Class 1 or 2.",
+    "source": "MGL Chapter 90 Section 1B"
+  },
+  {
+    "id": "ma-classification-2",
+    "title": "Motorized Bicycle vs E-Bike Distinction",
+    "category": "regulation",
+    "content": "Massachusetts distinguishes motorized bicycles (mopeds) from e-bikes. A motorized bicycle is a pedal bicycle with helper motor or non-pedal bicycle with motor, cylinder capacity not exceeding 50cc, with automatic transmission. Motorized bicycles require a valid driver's license or learner's permit and minimum operator age of 16. E-bikes (Class 1 and 2) have no such requirements. This distinction is critical: e-bikes are treated as bicycles, not motor vehicles.",
+    "source": "Mass.gov - Massachusetts law about bicycles"
+  },
+  {
+    "id": "boston-riding-rules-1",
+    "title": "Where E-Bikes Can Ride in Boston",
+    "category": "regulation",
+    "content": "E-bikes are allowed on all public streets except limited-access highways, bike lanes (painted and separated), bike paths, paved trails, and multi-use paths unless locally restricted. E-bikes are prohibited on sidewalks (statewide ban; regular bicycles ARE allowed on Boston sidewalks). Natural surface trails are prohibited unless locally approved. Municipalities may regulate e-bike use on bikeways and bike paths only after public notice and a public hearing.",
+    "source": "Boston.gov - Bike Laws in Boston"
+  },
+  {
+    "id": "boston-riding-rules-2",
+    "title": "Boston Cycling Traffic Rules",
+    "category": "regulation",
+    "content": "Cyclists in Boston must follow all traffic signals and stop signs, ride in the same direction as traffic except on specially marked streets, yield to pedestrians, give audible signal when passing pedestrians, and use hand signals when turning. Lighting requirements: white front light visible from 500+ feet, red rear light visible from 600+ feet, activated within 30 minutes of sunset. Pedal reflectors required if pedals lack them.",
+    "source": "Boston.gov - Bike Laws in Boston"
+  },
+  {
+    "id": "speed-limits",
+    "title": "E-Bike Speed Limits in Massachusetts",
+    "category": "regulation",
+    "content": "Class 1 and Class 2 e-bikes: motor assistance ceases at 20 mph. Riders may exceed 20 mph under their own pedal power (downhills, etc). Motorized bicycles (mopeds): max 25 mph. Boston's default city speed limit is 25 mph. Most residential streets are posted at 20 mph. The proposed Ride Safe Act (S.3077, May 2026) would create speed-based tiers: Tier 0 up to 20 mph, Tier 1 21-30 mph, Tier 2 31-40 mph, Tier 3 over 40 mph.",
+    "source": "Mass.gov - Massachusetts law about bicycles"
+  },
+  {
+    "id": "helmet-law",
+    "title": "Massachusetts Helmet Requirements",
+    "category": "safety",
+    "content": "Current Massachusetts law: riders under age 17 (16 and younger) MUST wear a properly fitting helmet when riding any bicycle or e-bike. Riders 17 and older have no helmet requirement for Class 1 or 2 e-bikes. Helmets not required for children in enclosed protective trailers. Infants under 12 months cannot ride in bicycle seats at all. The proposed Ride Safe Act would require helmets for ALL riders on Tier 1 devices (21-30 mph) regardless of age.",
+    "source": "Boston.gov - Bike Laws in Boston"
+  },
+  {
+    "id": "hyde-park-corridor",
+    "title": "Hyde Park Avenue Multimodal Corridor Project",
+    "category": "infrastructure",
+    "content": "The Hyde Park Avenue Multimodal Corridor Project covers a 4.5-mile corridor from Forest Hills to Wolcott Square. Currently in planning phase as of 2025. Serves 30,000+ residents with 200+ buses daily. Route 32 is among MBTA's top-ten ridership routes. 2019 preliminary design included bus priority elements and bike lanes. October 2023: Southwest Boston Transit Action Plan (SWBTAP) launched covering Roslindale, Hyde Park, and West Roxbury. Design concepts targeted for Fall 2025. Current bus delays: 15-30 minutes typical.",
+    "source": "Boston.gov - Hyde Park Avenue Multimodal Corridor"
+  },
+  {
+    "id": "jp-centre-south",
+    "title": "Jamaica Plain Centre/South Transportation Action Plan",
+    "category": "infrastructure",
+    "content": "The JP Centre/South Transportation Action Plan focuses on Centre Street and South Street between Hyde Square and Forest Hills Station. Centre Street is designated as a High Crash Network for cyclists. Existing bike lanes face blockages from double-parked vehicles and delivery trucks. Consultant Kittelson & Associates hired Fall 2024. 2025: conditions analysis completed. Spring 2026: public engagement begins. Route 39 bus improvements also planned.",
+    "source": "Boston.gov - JP Centre/South Transportation Action Plan"
+  },
+  {
+    "id": "better-bike-lanes",
+    "title": "Better Bike Lanes Program Results 2022-2024",
+    "category": "infrastructure",
+    "content": "Boston's Better Bike Lanes program launched 2022 and surpassed 15 miles of protected bike lanes. 2024 installations: Boylston Street (Back Bay), Arlington Street, Berkeley Street, Milk Street, Beacon Street, Western Avenue, Winship Street (Allston/Brighton). Results: 44% average increase in cycling on streets with new infrastructure. Control streets showed 3% decrease. Contraflow lanes increased cycling by 118%. No meaningful negative impact on vehicle traffic (1% increase). Speed humps on Elliot Street (JP) and Poplar Street (Roslindale) reduced 95th percentile speeds from 33 mph to 23 mph.",
+    "source": "Boston Cyclists Union - Bike Lanes Work 2025 Report"
+  },
+  {
+    "id": "go-boston-2030",
+    "title": "Go Boston 2030 Transportation Plan",
+    "category": "infrastructure",
+    "content": "Go Boston 2030 is the city's comprehensive transportation plan guiding investment through 2030. Identified 31+ miles of priority bikeway projects and 62 additional miles of 15-year projects. Includes Better Bike Corridors as key initiative. Vision Zero commitment: eliminate fatal and serious traffic crashes by 2030. Mayor Wu's 2022 expansion: goal of 50% of population within a 3-minute walk of a protected bike lane within 3 years, 9.4 miles of new bike lanes, 100 new Bluebikes stations, 100+ speed humps or raised crosswalks.",
+    "source": "Boston.gov - Go Boston 2030"
+  },
+  {
+    "id": "current-network",
+    "title": "Boston Low-Stress Bike Network 2025",
+    "category": "infrastructure",
+    "content": "Boston's current low-stress bike network as of 2025: 59 miles of off-street paths, 17.5 miles of separated bike lanes, 8 miles of neighborhood routes. Total: 84.5 miles of low-stress cycling infrastructure. The city aims to connect these segments into a continuous network rather than isolated stretches. Key gaps remain in Hyde Park, Roslindale, and Mattapan where arterials lack any bike infrastructure.",
+    "source": "Boston.gov - Better Bike Lanes"
+  },
+  {
+    "id": "safety-stats-national",
+    "title": "National E-Bike Injury Statistics",
+    "category": "safety",
+    "content": "E-bike injuries led to approximately 53,200 emergency room visits in the US between 2017 and 2022. Nearly half (24,400) occurred during 2022 alone. Emergency department visits for micromobility increased from 34,000 in 2017 to 87,800 in 2023. 293% increase in e-bike injuries between 2019 and 2023. Head trauma incidents from e-bike accidents: approximately 163 in 2017 to 7,922 in 2022 (49x increase). Common injury types: blunt trauma, orthopedic injuries, torso injuries.",
+    "source": "CPSC Micromobility Report 2017-2023"
+  },
+  {
+    "id": "safety-stats-children",
+    "title": "E-Bike Injuries Among Children",
+    "category": "safety",
+    "content": "Children aged 10-13 account for nearly 44% of all e-bike injuries. Children 14 and younger represent 36% of micromobility injuries from 2017-2022 despite being 18% of population. Youth aged 10-15 have injury rate about 6x that of other age groups. Speed-related injuries show 49.1% head/neck/facial injuries vs 28.7% for non-speed-related. Speed-related crashes cause 24.1% internal organ injuries vs 10.4% for non-speed-related crashes.",
+    "source": "CPSC - E-Scooter and E-Bike Injuries Soar"
+  },
+  {
+    "id": "safety-stats-boston",
+    "title": "Boston Cycling Crash Data",
+    "category": "safety",
+    "content": "Boston Vision Zero data: 417 bicycle crashes with 1 fatality since January 2023. City experiences 10+ traffic fatalities, hundreds of cyclist/pedestrian injuries annually. 2025 data shows 64 cyclist crashes with zero fatalities, a 74% decrease from 2024. Copley Square August 2025: e-bike rider struck pedestrian causing life-threatening injuries. 78% of Boston Globe readers (580+ respondents) supported strengthening e-bike laws after series of incidents.",
+    "source": "Boston.gov - Vision Zero"
+  },
+  {
+    "id": "ride-safe-act",
+    "title": "The Ride Safe Act (S.3077) - Speed-Based Classification",
+    "category": "legislation",
+    "content": "Filed May 4, 2026 by Governor Maura Healey. First-in-the-nation speed-based classification replacing device-type categories. Tier 0 (up to 20 mph): Class 1/2 e-bikes, no registration, bike lane access. Tier 1 (21-30 mph): Class 3 e-bikes, helmet required all ages, 16+ operator age. Tier 2 (31-40 mph): registration and liability insurance required, roads only, banned from bike lanes. Tier 3 (40+ mph): same as Tier 2. UL safety certification mandated. Aftermarket speed modifications explicitly prohibited.",
+    "source": "Mass.gov - Governor Healey Files Ride Safe Act"
+  },
+  {
+    "id": "ride-safe-act-details",
+    "title": "Ride Safe Act Equipment and Penalty Provisions",
+    "category": "legislation",
+    "content": "The Ride Safe Act requires UL 2271 certification for batteries, UL 2849 for e-bikes, UL 2272 for other powered micromobility. Visible plates or stickers required for Tier 2 and 3. Equipment standards include lights, reflectors, and reliable brakes. Aftermarket modifications that increase top speed, propulsion power, or passenger capacity are explicitly prohibited. Violations carry civil and criminal penalties similar to motor vehicles. Regulators authorized to develop additional rules through 2027.",
+    "source": "Electrek - Massachusetts proposes first-in-the-nation e-bike laws"
+  },
+  {
+    "id": "boston-council-ebike",
+    "title": "Boston City Council E-Bike Ordinances 2026",
+    "category": "legislation",
+    "content": "February 2026: Boston City Councilor Ed Flynn filed ordinance to ban mopeds and e-bikes for third-party food delivery services. Separate ordinance filed to regulate all e-bikes within city limits. These proposals are separate from the state-level Ride Safe Act. Motivated by pedestrian safety concerns in high-foot-traffic areas like Downtown Crossing and Copley Square.",
+    "source": "Boston.com - City councilor e-bike restrictions"
+  },
+  {
+    "id": "bluebikes-ebike",
+    "title": "Bluebikes E-Bike Share Program 2026",
+    "category": "infrastructure",
+    "content": "New 5-year Bluebikes contract effective April 2026, operated by Lyft across 13 municipalities. E-bikes currently 13% of fleet but account for 25% of rides. Target: 20% e-bike fleet by end of 2026, 33% long-term (2,000+ e-bikes). 60-70 charging docks (10% of stations) within 3 years. 200+ new and replacement stations planned. Goal: 9 million annual trips by 2031. System operates without taxpayer subsidies. Lyft pays municipalities $100,000/month from sponsorship revenue.",
+    "source": "Streetsblog MA - New Bluebikes Contract"
+  },
+  {
+    "id": "bluebikes-expansion",
+    "title": "Bluebikes Expansion to Hyde Park and Roslindale",
+    "category": "infrastructure",
+    "content": "Up to 20 new Bluebikes stations planned across Hyde Park, Roslindale, and West Roxbury. September 2025: 58 potential sites identified. Approximately 10 locations selected based on community feedback. Installation began May 2026. Pricing: $3.00 single-ride unlock, $11.99 day pass, 25-33 cents per minute for e-bikes over 30 minutes. Quincy is next confirmed expansion city with $250,000 state grant. Potential future cities: Lynn, Belmont, Winthrop, Waltham.",
+    "source": "WBUR - Bluebikes contract"
+  },
+  {
+    "id": "massdot-bike-plan",
+    "title": "MassDOT 2019 Statewide Bicycle Transportation Plan",
+    "category": "infrastructure",
+    "content": "MassDOT's 2019 Statewide Bicycle Transportation Plan is the state roadmap to make biking safe, comfortable, and convenient for everyday travel. Goals: increase percentage of everyday trips made by bicycling and eliminate bicyclist fatalities and serious injuries. Key initiative: build connected bicycle and trail networks with local, regional, and state partners and close critical gaps. Includes winter maintenance pilot program for MassDOT-owned bikeways. Ongoing data collection and evaluation to inform progress.",
+    "source": "Mass.gov - Bicycle Plan"
+  },
+  {
+    "id": "masscec-incentive",
+    "title": "MassCEC E-Bike Incentive Program",
+    "category": "policy",
+    "content": "Massachusetts Clean Energy Center launched e-bike incentive program April 2025, now closed. Income-based vouchers: up to $1,200 for lower-income households or $800 for middle-income. Additional $150 equipment voucher for helmets, lights, locks. Approximately 3,000 vouchers distributed by lottery. Program is NOT expected to run in 2026. Demonstrated strong demand: program was oversubscribed within days of opening.",
+    "source": "MassCEC - E-Bike Incentive Program"
+  }
+]
