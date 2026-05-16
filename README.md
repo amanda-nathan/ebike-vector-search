@@ -2,7 +2,7 @@
 
 Semantic search and retrieval-augmented generation (RAG) over Boston e-bike regulations, safety data, and infrastructure plans.
 
-**[Live demo](https://ebike-vector-search.streamlit.app)**
+**[Live demo](https://ebike-vector-search.streamlit.app)** (Snowflake trial expires June 15, 2026)
 
 ## Architecture
 
